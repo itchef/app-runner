@@ -1,4 +1,4 @@
-#App Runner
+# App Runner
 
 App runner is a simple service to serve compiled front end project.
 
@@ -8,6 +8,11 @@ It uses node js express framework to spawn a small server and serve index.html o
 * NodeJS = **9.5.0**
 * yarn = **1.3.2**
 * Google Chrome Browser
+
+## Configuration
+Add environment variable **API_PATH**
+
+e.g. API_PATH = 'http://api.example.com'
 
 ## Development server
 1. Run `yarn install` to download `node_modules`.

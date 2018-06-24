@@ -20,9 +20,19 @@
  */
 
 const express = require('express');
-const path = require('path');
+const path =    require('path');
+const fs =      require('fs');
+const config =  require('./dist/config/config.json');
 
 const runner = express();
+
+var updateAppAPI = function(apiPath) {
+    config.apiURL = apiPath.toString()
+    fs.writeFile('./dist/config/config.json', config, 'utf8')
+};
+
+if (process.env.API_PATH)
+    updateAppAPI(process.env.API_PATH);
 
 runner.use(express.static(__dirname + '/dist'));
 runner.get('/*', function (request, response) {
